@@ -1,0 +1,16 @@
+with open('lab2autogenV3.c', 'a') as script:
+    script.write('float powf(float base, unsigned short power) {\n')
+    script.write('\tswitch (power) {\n')
+    script.write(f'\t\tcase 0:\n')
+    script.write(f'\t\treturn 1;\n')
+    for i in range(1, 16384):
+        script.write(f'\t\tcase {i}:\n')
+        script.write(f'\t\treturn {"base*"*(i-1)}base;\n')
+    script.write('\tdefault:\n')
+    script.write('\t\tfloat returned = 1;\n')
+    script.write('\t\tfor (unsigned short i; i < power; ++i) {\n')
+    script.write('\t\t\treturned *= base;\n')
+    script.write('\t\t}\n')
+    script.write('\t\treturn returned;\n')
+    script.write('\t}\n')
+    script.write('}\n')
