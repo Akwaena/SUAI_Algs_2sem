@@ -12,9 +12,9 @@
 #include "libraries/akwaena.h"
 
 int seventhLab () {
-    unsigned int N;
+    unsigned long long int N;
     printf("Enter a number: ");
-    if (scanf("%u", &N) != 1) { printf("Error: wrong number"); return 1;};
+    if (scanf("%llu", &N) != 1) { printf("Error: wrong number"); return 1;};
 
     unsigned char *bytes = (unsigned char*)&N;
     printf("Number N=%u has the corresponding number of 1s in each byte:\n", N);
